@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:pixelsize=14:antialias=true:autohint=true";
-static char *font2[] = { "NotoColorEmoji:pixelsize=12:antialias=true:autohint=true" };
+static char *font = "Hack:pixelsize=16:antialias=true:autohint=true";
+static char *font2[] = { "Apple Color Emoji:pixelsize=13:antialias=true:autohint=true", "JetBrainsMono Nerd Font:pixelsize=17:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 /*
@@ -114,17 +114,17 @@ float alphaUnfocus;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 /* 8 normal colors */
-"#3b4252", /* black   */
+"#1f232b", /* black   */
 "#bf616a", /* red     */
 "#a3be8c", /* green   */
 "#ebcb8b", /* yellow  */
 "#81a1c1", /* blue    */
 "#b48ead", /* magenta */
-"#88c0d0", /* cyan    */
-"#e5e9f0", /* white   */
+"#94b5b5", /* cyan    */
+"#bec3cf", /* white   */
 
 /* 8 bright colors */
-"#4c566a", /* black   */
+"#65717e", /* black   */
 "#bf616a", /* red     */
 "#a3be8c", /* green   */
 "#ebcb8b", /* yellow  */
@@ -136,8 +136,8 @@ static const char *colorname[] = {
 [255] = 0,
 
  /* more colors can be added after 255 to use with DefaultXX */
- "#d8dee9", /* default foreground colour */
- "#2e3440", /* default background colour */
+ "#bec3cf", /* default foreground colour */
+ "#1f232b", /* default background colour */
 };
 
 
