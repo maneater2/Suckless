@@ -1,4 +1,4 @@
-# Luke's build of st - the simple (suckless) terminal
+# maneater2's build of st - the simple (suckless) terminal
 
 The [suckless terminal (st)](https://st.suckless.org/) with some additional
 features that make it literally the best terminal emulator ever:
@@ -22,7 +22,7 @@ features that make it literally the best terminal emulator ever:
 ## Pretty stuff
 
 + Compatibility with `Xresources` and `pywal` for dynamic colors.
-+ Default [gruvbox](https://github.com/morhetz/gruvbox) colors otherwise.
++ Default [nord](https://www.nordtheme.com) colors otherwise.
 + Transparency/alpha, which is also adjustable from your `Xresources`.
 + Default font is system "mono" at 14pt, meaning the font will match your
   system font.
@@ -82,8 +82,3 @@ To be clear about the color settings:
 - But if `wal` has run in your session, its colors will take priority.
 
 Note that when you run `wal`, it will negate the transparency of existing windows, but new windows will continue with the previously defined transparency.
-
-## Contact
-
-- Luke Smith <luke@lukesmith.xyz>
-- [https://lukesmith.xyz](https://lukesmith.xyz)
