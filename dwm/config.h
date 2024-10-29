@@ -30,7 +30,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "󰺻", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -39,7 +39,6 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -73,6 +72,12 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *prtscrcmd[] = { "flameshot", "gui", NULL };
 
+#include <X11/XF86keysym.h>
+#define VOL_UP "pamixer --allow-boost -i 10"
+#define XK_UP "pamixer --allow-boost -i 5"
+#define VOL_DOWN "pamixer --allow-boost -d 10"
+#define XK_DOWN "pamixer --allow-boost -d 5"
+#define VOL_MUTE "pamixer -t"
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -107,11 +112,16 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
 	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ 0,                            XK_Print,  spawn,          {.v = prtscrcmd } },
+
+  // volume control
+  { Mod1Mask,			XK_equal, 	    spawn,     SHCMD(VOL_UP) },
+	{ Mod1Mask,			XK_minus, 	    spawn,     SHCMD(VOL_DOWN) },
+	{ Mod1Mask,     XK_m,           spawn,     SHCMD(VOL_MUTE) },
+  { 0,            XF86XK_AudioMute, spawn,   SHCMD(VOL_MUTE) },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD(XK_UP) },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,	SHCMD(XK_DOWN) },
 };
 
 /* button definitions */
@@ -130,4 +140,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
