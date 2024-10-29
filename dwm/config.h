@@ -116,12 +116,12 @@ static const Key keys[] = {
 	{ 0,                            XK_Print,  spawn,          {.v = prtscrcmd } },
 
   // volume control
-  { Mod1Mask,			XK_equal, 	    spawn,     SHCMD(VOL_UP) },
-	{ Mod1Mask,			XK_minus, 	    spawn,     SHCMD(VOL_DOWN) },
-	{ Mod1Mask,     XK_m,           spawn,     SHCMD(VOL_MUTE) },
-  { 0,            XF86XK_AudioMute, spawn,   SHCMD(VOL_MUTE) },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD(XK_UP) },
-	{ 0,                            XF86XK_AudioLowerVolume, spawn,	SHCMD(XK_DOWN) },
+  { Mod1Mask,			                XK_equal,  spawn,          SHCMD(VOL_UP) },
+  { Mod1Mask,			                XK_minus,  spawn,          SHCMD(VOL_DOWN) },
+  { Mod1Mask,                     XK_m,      spawn,          SHCMD(VOL_MUTE) },
+  { 0,                            XF86XK_AudioMute, spawn,   SHCMD(VOL_MUTE) },
+  { 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD(XK_UP) },
+  { 0,                            XF86XK_AudioLowerVolume, spawn,	SHCMD(XK_DOWN) },
 };
 
 /* button definitions */
